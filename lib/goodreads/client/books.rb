@@ -31,5 +31,11 @@ module Goodreads
     def book_by_title(title)
       Hashie::Mash.new(request('/book/title', :title => title)['book'])
     end
+    
+    # Get book reviews by book ISBN
+    #
+    def show_by_isbn(isbn)
+      Hashie::Mash.new(request('/book/isbn', :isbn => isbn)['book'])
+    end
   end
 end
